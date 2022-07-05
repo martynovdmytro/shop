@@ -1,0 +1,16 @@
+header{
+    height: 580px;
+    background-image: url("../img/banner.jpg");
+}
+
+.section-category{
+    position: center;
+    height: 670px;
+}
+
+footer{
+    position: static;
+    height: 210px;
+    background-image: url("../img/footer.jpg");
+    background-color: grey;
+}
