@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('categories');
+    return view('categories', [
+        'categories' => Category::all()
+    ]);
 });
 
 Route::get('/products', function () {
-    return view('products');
+    return view('products', [
+        'products' => Product::all()
+    ]);
 });
 
 
