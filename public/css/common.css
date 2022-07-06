@@ -1,12 +1,13 @@
 header{
     position: static;
     height: 580px;
+    margin-bottom: 60px;
     background-image: url("../img/banner.jpg");
 }
 
 .section-category{
     position: center;
-    height: 670px;
+    height: 580px;
 }
 
 

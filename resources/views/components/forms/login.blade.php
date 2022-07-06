@@ -34,8 +34,8 @@
                             Dropdown button
                         </button>
                         <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Login</a></li>
-                            <li><a class="dropdown-item" href="#">Register</a></li>
+                            <li><a class="dropdown-item" href="/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/register">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="bg-green-300 col-md-6 offset-3 relative top-20">
+                <div class="col-md-6 offset-3 relative top-20">
                     <form method="POST" name="login" action="#">
                         <div>
                             <h2>Login</h2>
