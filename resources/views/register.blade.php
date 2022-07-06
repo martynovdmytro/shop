@@ -7,11 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/common.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>My very first project</title>
 </head>
 <body>
@@ -38,8 +34,8 @@
                             Dropdown button
                         </button>
                         <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="/login">Login</a></li>
-                            <li><a class="dropdown-item" href="/register">Register</a></li>
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="#">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,13 +45,25 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2 relative h-72 top-16">
-                    <div class="col-md-8 offset-2 absolute top-16">
-                        <h2 class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur est illo ipsa laudantium non, sapiente? Dolorem excepturi tempore vero?</h2>
-                    </div>
-                    <div class="absolute left-1/2 translate-middle-x bottom-0 mb-2">
-                        <button class="bg-red-600 w-36 h-10 rounded-md">button</button>
-                    </div>
+                <div class="col-md-6 offset-3 relative top-14">
+                    <form method="POST" name="register" action="#">
+                        <div>
+                            <h2>Create an account</h2>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input name="username" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input name="email" type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input name="password" type="password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -70,44 +78,6 @@
                 <img src="/img/desctop.jpg" class="col-md-4 float-md-start mx-auto p-0.5"/>
                 <img src="/img/accessories.jpg" class="col-md-4 float-md-start mx-auto p-0.5"/>
                 <img src="/img/phone.jpg" class="col-md-4 float-md-start mx-auto p-0.5"/>
-        </div>
-    </section>
-    <section class="section-product">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        <img src="/img/macbook.jpg" />
-                    </div>
-                    <div class="bg-blue-300 text-center h-20">
-                        Lorem ipsum dolor sit amet
-                    </div>
-                </div>
-                <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, modi!
-                    </div>
-                    <div class="bg-blue-300 h-20">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, reprehenderit?
-                    </div>
-                </div>
-                <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, modi!
-                    </div>
-                    <div class="bg-blue-300 h-20">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, reprehenderit?
-                    </div>
-                </div>
-                <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, modi!
-                    </div>
-                    <div class="bg-blue-300 h-20">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, reprehenderit?
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 </main>
@@ -129,5 +99,10 @@
         </div>
     </section>
 </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/common.js') }}"></script>
 </body>
 </html>
