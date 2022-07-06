@@ -26,10 +26,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="navbar mt-2">
-                        <button href="#" type="button" class="w-1/6">Home</button>
-                        <button href="#" type="button" class="w-1/6">Catalog</button>
-                        <button href="#" type="button" class="w-1/6">Delivery</button>
-                        <button href="#" type="button" class="w-1/6">About Us</button>
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">Catalog</a>
+                        <a class="nav-link" href="#">Delivery</a>
+                        <a class="nav-link" href="#">About Us</a>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -54,7 +54,7 @@
                         <h2 class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur est illo ipsa laudantium non, sapiente? Dolorem excepturi tempore vero?</h2>
                     </div>
                     <div class="absolute left-1/2 translate-middle-x bottom-0 mb-2">
-                        <button class="bg-red-600 w-36 h-10 rounded-md">button</button>
+                        <button class="btn btn-danger bg-red-600 w-36 h-10 rounded-md">button</button>
                     </div>
                 </div>
             </div>
@@ -76,35 +76,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        <img src="/img/macbook.jpg" />
-                    </div>
-                    <div class="bg-blue-300 text-center h-20">
-                        Lorem ipsum dolor sit amet
+                    <img class="img-fluid mx-auto p-2" src="https://loremflickr.com/320/240" />
+                    <div class="text-center h-20 font-semibold">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ipsam!</a>
                     </div>
                 </div>
                 <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, modi!
-                    </div>
-                    <div class="bg-blue-300 h-20">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, reprehenderit?
+                    <img class="img-fluid mx-auto p-2" src="https://loremflickr.com/320/240" />
+                    <div class="text-center h-20 font-semibold">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ipsam!</a>
                     </div>
                 </div>
                 <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, modi!
-                    </div>
-                    <div class="bg-blue-300 h-20">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, reprehenderit?
+                    <img class="img-fluid mx-auto p-2" src="https://loremflickr.com/320/240" />
+                    <div class="text-center h-20 font-semibold">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ipsam!</a>
                     </div>
                 </div>
                 <div class="col-md-3 flex-column mt-2 mb-2">
-                    <div class="bg-green-300 h-60">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, modi!
-                    </div>
-                    <div class="bg-blue-300 h-20">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, reprehenderit?
+                    <img class="img-fluid mx-auto p-2" src="https://loremflickr.com/320/240" />
+                    <div class="text-center h-20 font-semibold">
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ipsam!</a>
                     </div>
                 </div>
             </div>
