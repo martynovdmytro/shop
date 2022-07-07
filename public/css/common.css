@@ -1,24 +1,18 @@
 header{
-    position: static;
+    position: relative;
     height: 580px;
-    margin-bottom: 60px;
     background-image: url("../img/banner.jpg");
 }
 
-.section-category{
-    position: center;
-    height: 580px;
-}
+main{
+    min-height: calc(100vh - 60px);
+    padding-top: 60px;
+    padding-bottom: 60px;
 
-.section-product{
-    height: 580px;
 }
-
 
 footer{
-    position: relative;
-    margin-top: 60px;
+    margin-top: 30px;
     height: 210px;
     background-image: url("../img/footer.jpg");
-    background-color: grey;
 }

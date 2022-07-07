@@ -1,6 +1,6 @@
 <x-layout>
-    <section class="section-product">
-        <article class="container m-6">
+    <section>
+        <article class="container m-10">
             <div class="row">
                 <div class="col-md-4">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -30,7 +30,7 @@
                         </button>
                     </div>
 
-                    <div class="bg-pink-300 col-md-10 mx-auto mt-2 text-center">
+                    <div class="col-md-10 mx-auto mt-2 text-center">
                         <b>Title</b>
                     </div>
 

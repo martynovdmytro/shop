@@ -1,9 +1,13 @@
 <x-layout>
-    <section class="container section-category">
-        <div class="img-fluid relative h-4/6">
-            @foreach($categories as $category)
-                <img src="{{ $category->image }}" class="col-md-4 float-md-start mx-auto p-0.5"/>
-            @endforeach
+    <section>
+        <div class="container">
+            <div class="img-fluid relative h-4/6">
+                @foreach($categories as $category)
+                    <a href="/products">
+                        <img src="{{ $category->image }}" class="col-md-4 float-md-start mx-auto p-0.5"/>
+                    </a>
+                @endforeach
+            </div>
         </div>
     </section>
 </x-layout>

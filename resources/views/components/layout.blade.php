@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="navbar mt-2">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                         <a class="nav-link" href="#">Catalog</a>
                         <a class="nav-link" href="#">Delivery</a>
                         <a class="nav-link" href="#">About Us</a>
