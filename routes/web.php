@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -15,17 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('categories', [
-        'categories' => Category::all()
-    ]);
-});
+Route::get('/', [CategoryController::class, 'index']);
 
-Route::get('/products', function () {
-    return view('products', [
-        'products' => Product::all()
-    ]);
-});
+Route::get('/products', [ProductController::class, 'index']);
+
 
 Route::get('/products/product', function () {
     return view('product');

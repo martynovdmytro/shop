@@ -14,8 +14,9 @@ class CreateAttributeDescriptionsTable extends Migration
     public function up()
     {
         Schema::create('attribute_descriptions', function (Blueprint $table) {
-            $table->increments('attribute_description_id');
+            $table->id();
             $table->text('description');
+            $table->foreignId('attribute_id');
             $table->timestamps();
         });
     }

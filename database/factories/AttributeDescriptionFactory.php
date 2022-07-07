@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AttributeDescriptionFactory extends Factory
@@ -14,7 +15,8 @@ class AttributeDescriptionFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->paragraph()
+            'description' => $this->faker->paragraph(),
+            'attribute_id' => rand(1, 10)
         ];
     }
 }

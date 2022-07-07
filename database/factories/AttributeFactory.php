@@ -15,7 +15,7 @@ class AttributeFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'attribute_description_id' => rand(1, 10)
+            'product_id' => rand(1, 10)
         ];
     }
 }
