@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
         Category::factory(6)->create();
 
-        Attribute::factory(10)
+        Attribute::factory(30)
             ->has(Product::factory()
                 ->count(3))
             ->create();

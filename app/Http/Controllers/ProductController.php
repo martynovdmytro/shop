@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attribute;
+use App\Models\AttributeDescription;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -18,7 +20,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('product', [
-            'product' => $product
+            'product' => $product,
+            'description' => $product->attributes,
         ]);
     }
 }

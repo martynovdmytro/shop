@@ -17,12 +17,13 @@ class ProductFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
+            'slug' => $this->faker->slug(2),
             'description' => $this->faker->paragraph(),
             'image' => 'https://loremflickr.com/320/240',
             'price' => $this->faker->numberBetween(10000, 20000),
             'amount' => $this->faker->numberBetween(50, 100),
             'category_id' => rand(1, 6),
-            'attribute_id' => rand(1, 10),
+            'attribute_id' => rand(1, 30),
         ];
     }
 }
