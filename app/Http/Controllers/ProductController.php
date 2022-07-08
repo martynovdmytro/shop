@@ -8,10 +8,18 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Category $category)
     {
         return view('products', [
-            'products' => Product::all()
+            'products' => $category->product
+        ]);
+    }
+
+    public function show(Product $product)
+    {
+        return view('product', [
+            'product' => $product
         ]);
     }
 }
+

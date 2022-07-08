@@ -2,6 +2,7 @@
     <section>
         <article class="container m-10">
             <div class="row">
+{{--                {{ ddd($product) }}--}}
                 <div class="col-md-4">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                         <div class="carousel-indicators">
@@ -11,13 +12,13 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="/img/macbook.jpg" class="d-block w-100" alt="...">
+                                <img src="{{ $product->image }}" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="/img/camera.jpg" class="d-block w-100" alt="...">
+                                <img src="{{ $product->image }}" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="/img/tablet.jpg" class="d-block w-100" alt="...">
+                                <img src="{{ $product->image }}" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -31,7 +32,7 @@
                     </div>
 
                     <div class="col-md-10 mx-auto mt-2 text-center">
-                        <b>Title</b>
+                        <b>{{ $product->title }}</b>
                     </div>
 
                     <div class="row">
