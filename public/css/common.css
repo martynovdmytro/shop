@@ -1,5 +1,5 @@
 header{
-    position: relative;
+    position: static;
     height: 580px;
     background-image: url("../img/banner.jpg");
 }

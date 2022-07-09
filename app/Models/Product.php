@@ -11,12 +11,23 @@ class Product extends Model
 
     public function category()
     {
+
         return $this->belongsTo(Category::class);
+
     }
 
     public function attributes()
     {
+
         return $this->hasMany(Attribute::class);
+
+    }
+
+    public function getProduct($request)
+    {
+
+        return Product::all()->where('title', $request);
+
     }
 
 }

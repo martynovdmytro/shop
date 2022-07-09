@@ -24,5 +24,16 @@ class ProductController extends Controller
             'description' => $product->attributes,
         ]);
     }
+
+    public function search(Request $request)
+    {
+        if ($request) {
+            $data = new Product();
+
+            return view('products', [
+                'products' => $data->getProduct($request->input('search'))
+            ]);
+        }
+    }
 }
 

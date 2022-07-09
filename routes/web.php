@@ -23,9 +23,10 @@ Route::get('/', [CategoryController::class, 'index']);
 
 Route::get('category/{category:slug}', [ProductController::class, 'index']);
 Route::get('product/{product:slug}', [ProductController::class, 'show']);
+Route::get('search', [ProductController::class, 'search']);
 
-Route::get('register', [RegistrationController::class, 'index']);
-Route::post('create', [RegistrationController::class, 'create']);
+Route::get('register', [RegistrationController::class, 'index'])->middleware('guest');
+Route::post('create', [RegistrationController::class, 'create'])->middleware('guest');
 
 Route::get('login', [AuthorisationController::class, 'index'])->middleware('guest');
 Route::post('auth', [AuthorisationController::class, 'auth'])->middleware('guest');
