@@ -5,8 +5,11 @@
 
     </nav>
     <section>
-
-        <x-header.welcome />
-
+        @auth()
+            <x-header.welcome />
+        @else
+            <x-header.create />
+        @endauth
     </section>
+
 </header>

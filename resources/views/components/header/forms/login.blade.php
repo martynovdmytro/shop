@@ -34,10 +34,16 @@
                             <label class="form-label">Email address</label>
                             <input name="email" type="email" class="form-control">
                         </div>
+                        @error('email')
+                        <p class="text-red-500 text-xs mt-1 ">{{ $message }}</p>
+                        @enderror
                         <div class="mb-3">
                             <label class="form-label">Password</label>
                             <input name="password" type="password" class="form-control">
                         </div>
+                        @error('password')
+                        <p class="text-red-500 text-xs mt-1 ">{{ $message }}</p>
+                        @enderror
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

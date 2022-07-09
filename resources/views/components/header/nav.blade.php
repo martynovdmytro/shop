@@ -19,9 +19,19 @@
                     Dropdown button
                 </button>
                 <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                    @auth()
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    @else
+                    <li><a class="dropdown-item" href="/register">Register</a></li>
                     <li><a class="dropdown-item" href="/login">Login</a></li>
+                    @endauth
                 </ul>
             </div>
         </div>
     </div>
+    @if(session()->has('success'))
+        <div class="bg-primary col-md-3 offset-9 position-fixed bottom-0 right-0 rounded-2 h-10 text-center">
+            <h5 class="m-2">{{ session('success') }}</h5>
+        </div>
+    @endif
 </div>

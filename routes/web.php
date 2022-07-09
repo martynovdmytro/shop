@@ -27,8 +27,10 @@ Route::get('product/{product:slug}', [ProductController::class, 'show']);
 Route::get('register', [RegistrationController::class, 'index']);
 Route::post('create', [RegistrationController::class, 'create']);
 
-Route::get('login', [AuthorisationController::class, 'index']);
-Route::post('auth', [AuthorisationController::class, 'auth']);
+Route::get('login', [AuthorisationController::class, 'index'])->middleware('guest');
+Route::post('auth', [AuthorisationController::class, 'auth'])->middleware('guest');
+Route::get('logout', [AuthorisationController::class, 'logout'])->middleware('auth');
+
 
 
 
