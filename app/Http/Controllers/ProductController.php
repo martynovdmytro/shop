@@ -27,13 +27,18 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        if ($request) {
-            $data = new Product();
+        $data = new Product();
+        $product = $data->getProduct($request->input('search'));
 
-            return view('products', [
-                'products' => $data->getProduct($request->input('search'))
-            ]);
+        if (empty($product->all())) {
+            return back()
+                ->with('success', 'Bad request');
         }
+
+        return view('products', [
+            'products' => $product
+        ]);
+
     }
 }
 

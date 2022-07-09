@@ -33,7 +33,7 @@ class AuthorisationController extends Controller
 
     }
 
-    public function logout()
+    public function destroy()
     {
         auth()->logout();
 

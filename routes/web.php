@@ -4,8 +4,6 @@ use App\Http\Controllers\AuthorisationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
-use App\Models\Category;
-use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,16 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CategoryController::class, 'index']);
 
-Route::get('category/{category:slug}', [ProductController::class, 'index']);
-Route::get('product/{product:slug}', [ProductController::class, 'show']);
-Route::get('search', [ProductController::class, 'search']);
+Route::controller(ProductController::class)->group(function (){
+    Route::get('category/{category:slug}', 'index');
+    Route::get('product/{product:slug}', 'show');
+    Route::get('search', 'search');
+});
 
 Route::get('register', [RegistrationController::class, 'index'])->middleware('guest');
-Route::post('create', [RegistrationController::class, 'create'])->middleware('guest');
+Route::post('create', [RegistrationController::class, 'store'])->middleware('guest');
 
-Route::get('login', [AuthorisationController::class, 'index'])->middleware('guest');
-Route::post('auth', [AuthorisationController::class, 'auth'])->middleware('guest');
-Route::get('logout', [AuthorisationController::class, 'logout'])->middleware('auth');
+Route::controller(AuthorisationController::class)->group(function(){
+    Route::get('login', 'index')->middleware('guest');
+    Route::post('auth', 'auth')->middleware('guest');
+    Route::get('logout', 'destroy')->middleware('auth');
+});
 
 
 

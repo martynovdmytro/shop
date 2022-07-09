@@ -25,15 +25,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Product::factory(30)->create();
 
         Category::factory(6)->create();
 
-        Attribute::factory(30)
-            ->has(Product::factory()
-                ->count(3))
-            ->create();
-
-        AttributeDescription::factory()->count(30)->create();
+        Attribute::factory(30)->create();
 
     }
 }

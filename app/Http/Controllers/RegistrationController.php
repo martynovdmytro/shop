@@ -13,7 +13,7 @@ class RegistrationController extends Controller
         return view('components.header.forms.register');
     }
 
-    public function create()
+    public function store()
     {
 
         $attributes = request()

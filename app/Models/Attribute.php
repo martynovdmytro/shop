@@ -9,11 +9,6 @@ class Attribute extends Model
 {
     use HasFactory;
 
-    public function attribute_description()
-    {
-        return $this->hasMany(AttributeDescription::class, 'attribute_id');
-    }
-
     public function products()
     {
         return $this->belongsToMany(Product::class);
