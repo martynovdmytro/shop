@@ -30,6 +30,8 @@
 <div class="col-md-10 mx-auto mt-2 text-center">
     <b>{{ $product->title }}</b>
     <p>{{ $product->description }}</p>
+    <p>{{ $product->price }}$</p>
+
 </div>
 
 <div class="row">

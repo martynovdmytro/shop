@@ -7,6 +7,7 @@ use App\Models\AttributeDescription;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductAttribute;
+use App\Models\User;
 use Database\Factories\AttributeFactory;
 use Database\Factories\ProductAttributeFactory;
 use Database\Factories\ProductFactory;
@@ -33,8 +34,6 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         AttributeDescription::factory()->count(30)->create();
-
-
 
     }
 }

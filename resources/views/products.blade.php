@@ -7,9 +7,10 @@
                         <a href="/product/{{ $product->slug }}">
                             <img class="img-fluid mx-auto p-2" src="{{ $product->image }}" />
                         </a>
-                        <div class="text-center h-40 font-semibold">
+                        <div class="h-40 font-semibold">
                             <h4><a class="nav-link" href="/product/{{ $product->slug }}">{{ $product->title }}</a></h4>
                             <p>{{ $product->description }}</p>
+                            <p>{{ $product->price }}$</p>
                         </div>
                     </div>
                 @endforeach

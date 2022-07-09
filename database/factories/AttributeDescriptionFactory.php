@@ -16,7 +16,7 @@ class AttributeDescriptionFactory extends Factory
     {
         return [
             'description' => $this->faker->paragraph(),
-            'attribute_id' => rand(1, 10)
+            'attribute_id' => rand(1, 30)
         ];
     }
 }
