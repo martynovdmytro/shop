@@ -1,1 +1,1 @@
-This is my very first project created from scratch in order to sort out skills and improve Laravel using abilities. 
+This is my very first project created from scratch in order to sort out my skills and study Laravel much deeper 
