@@ -24,7 +24,7 @@ class AuthorisationController extends Controller
         if (Auth::attempt($attributes)) {
             $request->session()->regenerate();
             return redirect('/')
-                ->with('success', 'Welcome!');
+                ->with('message', 'Welcome!');
         }
 
         return back()

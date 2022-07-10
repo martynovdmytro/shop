@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attribute;
-use App\Models\AttributeDescription;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -27,12 +26,13 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
+
         $data = new Product();
         $product = $data->getProduct($request->input('search'));
 
         if (empty($product->all())) {
             return back()
-                ->with('success', 'Bad request');
+                ->with('message', 'Bad request');
         }
 
         return view('products', [

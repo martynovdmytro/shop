@@ -3,14 +3,10 @@
         <article class="container m-10">
             <div class="row">
                 <div class="col-md-4">
-
                     <x-carousel-slide :product="$product" />
-
                 </div>
                 <div class="col-md-8">
-
                     <x-attributes :description="$description" />
-
                 </div>
             </div>
         </article>

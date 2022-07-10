@@ -30,7 +30,7 @@ class RegistrationController extends Controller
 
         auth()->login($user);
 
-        session()->flash('success', 'Your account created');
+        session()->flash('message', 'Your account created');
 
         return redirect('/');
 
