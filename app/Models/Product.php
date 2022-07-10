@@ -23,11 +23,6 @@ class Product extends Model
 
     }
 
-    public function getProduct($request)
-    {
 
-        return Product::all()->where('title', $request);
-
-    }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\AuthorisationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
@@ -25,14 +26,26 @@ Route::controller(ProductController::class)->group(function (){
     Route::get('search', 'search');
 });
 
+// Registration
 Route::get('register', [RegistrationController::class, 'index'])->middleware('guest');
 Route::post('create', [RegistrationController::class, 'store'])->middleware('guest');
 
+// Authorisation
 Route::controller(AuthorisationController::class)->group(function(){
     Route::get('login', 'index')->middleware('guest');
     Route::post('auth', 'auth')->middleware('guest');
     Route::get('logout', 'destroy')->middleware('auth');
 });
+
+// Admin side
+Route::get('admin', [AdministratorController::class, 'index']);
+Route::get('admin/create', [AdministratorController::class, 'create']);
+Route::post('admin/store', [AdministratorController::class, 'store']);
+Route::post('admin/edit', [AdministratorController::class, 'edit']);
+Route::get('admin/delete', [AdministratorController::class, 'delete']);
+
+
+
 
 
 

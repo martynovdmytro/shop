@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attribute;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 class ProductController extends Controller
 {
@@ -16,6 +17,22 @@ class ProductController extends Controller
         ]);
     }
 
+    public function store()
+    {
+        $attributes = request()
+            ->validate([
+                'title' => ['required'],
+                'slug' => ['required'],
+                'description' => ['required'],
+                'price' => ['required'],
+                'amount' => ['required']
+            ]);
+
+        Product::create($attributes);
+
+        return back();
+    }
+
     public function show(Product $product)
     {
         return view('product', [
@@ -24,11 +41,10 @@ class ProductController extends Controller
         ]);
     }
 
-    public function search(Request $request)
+    public function search()
     {
 
-        $data = new Product();
-        $product = $data->getProduct($request->input('search'));
+        $product = Product::all()->where('title', request()->input('search'));
 
         if (empty($product->all())) {
             return back()
@@ -41,4 +57,3 @@ class ProductController extends Controller
 
     }
 }
-
