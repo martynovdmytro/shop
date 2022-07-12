@@ -18,11 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('description');
-            $table->string('image');
             $table->integer('price')->unsigned();
             $table->integer('amount');
-            $table->foreignId('category_id');
-            $table->foreignId('attribute_id');
+            $table->string('image')->nullable();
+            $table->foreignId('category_id')->nullable();
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreProductRequest extends FormRequest
 {
@@ -11,10 +12,10 @@ class StoreProductRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return false;
-    }
+//    public function authorize()
+//    {
+//        return true;
+//    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -24,7 +25,12 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'amount' => 'required',
+            'image' => 'required',
         ];
     }
 }

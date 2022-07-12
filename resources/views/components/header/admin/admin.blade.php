@@ -19,11 +19,22 @@
         <x-header.nav />
     </nav>
     <section>
-
         <div class="container">
             <div class="row">
-                <div class="col-md-6 offset-3 relative top-14">
-                    <form method="POST" name="register" enctype="multipart/form-data" action="/store">
+                <article class="col-md-2 relative top-14">
+                    <h4>Dashboard</h4>
+                    <form>
+                        <button class="btn btn-danger w-100 p-2 m-1 mx-auto">Product</button>
+                    </form>
+                    <form>
+                        <button class="btn btn-danger w-100 p-2 m-1 mx-auto">Category</button>
+                    </form>
+                    <form>
+                        <button class="btn btn-danger w-100 p-2 m-1 mx-auto">Attributes</button>
+                    </form>
+                </article>
+                <article class="col-md-6 offset-1 relative top-14">
+                    <form method="POST" name="register" enctype="multipart/form-data" action="/admin/store">
                         @csrf
                         <div>
                             <h2>Add a product</h2>
@@ -31,7 +42,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Title</label>
-                                <input name="slug" type="text" class="form-control">
+                                <input name="title" type="text" class="form-control">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Slug</label>
@@ -55,13 +66,21 @@
                                 <label class="form-label">Image</label>
                                 <input name="image" type="file" class="form-control">
                             </div>
+                            <div class="col-md-2 mb-3">
+                                <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                            <div class="btn-group col-md-8 offset-2 mb-3">
+                                <select class="form-select" name="category" aria-label="Default select example">
+                                    @foreach($categories as $category)
+                                        <option class="form-control">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Create</button>
                     </form>
-                </div>
+                </article>
             </div>
         </div>
-
     </section>
 </header>
 

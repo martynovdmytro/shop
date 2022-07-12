@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AdministratorController extends Controller
@@ -13,7 +14,7 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-
+        return view('components.header.admin.admin');
     }
 
     /**
@@ -23,7 +24,9 @@ class AdministratorController extends Controller
      */
     public function create()
     {
-        return view('components.header.forms.product');
+        return view('components.header.admin.admin', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -34,7 +37,7 @@ class AdministratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -54,9 +57,10 @@ class AdministratorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    // view edit page arguments $id
+    public function edit()
     {
-        //
+        return view('test');
     }
 
     /**
@@ -66,6 +70,7 @@ class AdministratorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // make query to the model. request from edit. arguments $id
     public function update(Request $request, $id)
     {
         //
@@ -77,8 +82,10 @@ class AdministratorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+    // arguments $id
+    public function destroy()
     {
-        //
+        return view('text');
     }
 }

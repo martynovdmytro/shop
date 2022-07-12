@@ -1,6 +1,6 @@
 @props(['product'])
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+<div id="carouselExampleIndicators" class="carousel slide img-thumbnail" data-bs-ride="true">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -26,14 +26,25 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<div class="img-thumbnail mt-2">
+    <div class="col-md-10 mx-auto mt-2 text-left">
+        <b>{{ $product->title }}</b>
+        <p>{{ $product->description }}</p>
+        <p>{{ $product->price }}$</p>
+    </div>
 
-<div class="col-md-10 mx-auto mt-2 text-center">
-    <b>{{ $product->title }}</b>
-    <p>{{ $product->description }}</p>
-    <p>{{ $product->price }}$</p>
+    <div class="row pb-2">
+        <button class="btn btn-danger col-md-10 mx-auto">Add to card</button>
+    </div>
 
+    <div class="row pb-2">
+        <form class="col-md-3 mx-auto" method="GET" action="/admin/edit">
+            <button class="btn btn-danger w-100" type="submit">Edit</button>
+        </form>
+        <form class="col-md-3 mx-auto" method="GET" action="/admin/delete">
+            <button class="btn btn-danger w-100" type="submit">Delete</button>
+        </form>
+    </div>
 </div>
 
-<div class="row">
-    <button class="btn btn-danger col-md-10 mx-auto mt-2">Add to card</button>
-</div>
+

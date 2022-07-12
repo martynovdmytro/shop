@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\AuthorisationController;
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
@@ -18,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [CategoryController::class, 'index']);
-
-Route::controller(ProductController::class)->group(function (){
-    Route::get('category/{category:slug}', 'index');
-    Route::get('product/{product:slug}', 'show');
+// Review
+Route::controller(CatalogController::class)->group(function (){
+    Route::get('/', 'category');
+    Route::get('category/{category:slug}', 'categoryProducts');
+    Route::get('product/{product:slug}', 'product');
     Route::get('search', 'search');
 });
 
@@ -40,10 +41,12 @@ Route::controller(AuthorisationController::class)->group(function(){
 // Admin side
 Route::get('admin', [AdministratorController::class, 'index']);
 Route::get('admin/create', [AdministratorController::class, 'create']);
-Route::post('admin/store', [AdministratorController::class, 'store']);
-Route::post('admin/edit', [AdministratorController::class, 'edit']);
+Route::get('admin/edit', [AdministratorController::class, 'edit']);
 Route::get('admin/delete', [AdministratorController::class, 'delete']);
 
+
+Route::post('product/store', [ProductController::class, 'store']);
+Route::post('product/edit', [ProductController::class, 'edit']);
 
 
 
