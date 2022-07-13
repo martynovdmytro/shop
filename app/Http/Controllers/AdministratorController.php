@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdministratorController extends Controller
@@ -14,7 +15,9 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        return view('components.header.admin.admin');
+        return view('components.header.admin.admin', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -46,9 +49,19 @@ class AdministratorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showCategory()
     {
-        //
+        return view('components.header.admin.admin-category-list',[
+            'categories' => Category::all()
+        ]);
+    }
+
+    public function showProduct(Category $category)
+    {
+        return view('components.header.admin.admin-product-list',[
+            'products' => $category->products
+        ]);
+
     }
 
     /**
@@ -58,9 +71,12 @@ class AdministratorController extends Controller
      * @return \Illuminate\Http\Response
      */
     // view edit page arguments $id
-    public function edit()
+    public function edit(Product $product)
     {
-        return view('test');
+        return view('components.header.admin.admin-product-edit', [
+            'product' => $product,
+            'categories' => Category::all()
+        ]);
     }
 
     /**

@@ -40,13 +40,17 @@ Route::controller(AuthorisationController::class)->group(function(){
 
 // Admin side
 Route::get('admin', [AdministratorController::class, 'index']);
-Route::get('admin/create', [AdministratorController::class, 'create']);
-Route::get('admin/edit', [AdministratorController::class, 'edit']);
-Route::get('admin/delete', [AdministratorController::class, 'delete']);
+Route::get('admin/catalog', [AdministratorController::class, 'showCategory']);
+Route::get('admin/{category:slug}', [AdministratorController::class, 'showProduct']);
+
+Route::get('admin/product/create', [AdministratorController::class, 'create']);
+Route::get('admin/edit/{product:slug}', [AdministratorController::class, 'edit']);
 
 
+Route::get('product/show', [ProductController::class, 'show']);
 Route::post('product/store', [ProductController::class, 'store']);
-Route::post('product/edit', [ProductController::class, 'edit']);
+Route::post('/edit/{product:slug}', [ProductController::class, 'update']);
+Route::get('/delete/{product:slug}', [ProductController::class, 'destroy']);
 
 
 

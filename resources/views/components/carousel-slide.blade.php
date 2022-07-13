@@ -38,12 +38,7 @@
     </div>
 
     <div class="row pb-2">
-        <form class="col-md-3 mx-auto" method="GET" action="/admin/edit">
-            <button class="btn btn-danger w-100" type="submit">Edit</button>
-        </form>
-        <form class="col-md-3 mx-auto" method="GET" action="/admin/delete">
-            <button class="btn btn-danger w-100" type="submit">Delete</button>
-        </form>
+
     </div>
 </div>
 
