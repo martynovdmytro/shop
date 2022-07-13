@@ -15,9 +15,7 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        return view('components.header.admin.admin', [
-            'categories' => Category::all()
-        ]);
+        return view('components.header.admin.create');
     }
 
     /**
@@ -27,7 +25,7 @@ class AdministratorController extends Controller
      */
     public function create()
     {
-        return view('components.header.admin.admin', [
+        return view('components.header.admin.admin-product-create', [
             'categories' => Category::all()
         ]);
     }

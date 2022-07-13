@@ -22,56 +22,10 @@
         <div class="container">
             <div class="row">
                 <article class="col-md-2 relative top-14">
-                    <h4>Dashboard</h4>
-                        <form class="m-1" method="GET" action="/admin/catalog">
-                            <button class="btn btn-danger w-100" type="submit">Catalog</button>
-                        </form>
+                    <x-header.admin.admin-dashboard />
                 </article>
                 <article class="col-md-6 offset-1 relative top-14">
-                    <form method="POST" name="register" enctype="multipart/form-data" action="/admin/store">
-                        @csrf
-                        <div>
-                            <h2>Add a product</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Title</label>
-                                <input name="title" type="text" class="form-control">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Slug</label>
-                                <input name="slug" type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Description</label>
-                            <input name="description" type="text" class="form-control">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2 mb-3">
-                                <label class="form-label">Price</label>
-                                <input name="price" type="text" class="form-control">
-                            </div>
-                            <div class="col-md-2 mb-3">
-                                <label class="form-label">Amount</label>
-                                <input name="amount" type="text" class="form-control">
-                            </div>
-                            <div class="col-md-8 mb-3">
-                                <label class="form-label">Image</label>
-                                <input name="image" type="file" class="form-control">
-                            </div>
-                            <div class="col-md-2 mb-3">
-                                <button type="submit" class="btn btn-primary">Create</button>
-                            </div>
-                            <div class="btn-group col-md-8 offset-2 mb-3">
-                                <select class="form-select" name="category" aria-label="Default select example">
-                                    @foreach($categories as $category)
-                                        <option class="form-control">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </form>
+                    {{ $slot }}
                 </article>
             </div>
         </div>
@@ -80,12 +34,11 @@
 
 <main>
 
-    <x-marketplace />
+
 
 </main>
 
 <x-footer />
-
 </body>
 </html>
 

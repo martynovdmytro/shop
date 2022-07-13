@@ -14,6 +14,34 @@ class AuthorisationController extends Controller
         return view('components.header.forms.login');
     }
 
+    public function register()
+    {
+        return view('components.header.forms.register');
+    }
+
+    public function store()
+    {
+
+        $attributes = request()
+            ->validate([
+                'login' => ['required'],
+                'email' => ['required'],
+                'password' => ['required'],
+
+            ]);
+
+        $attributes['password'] = bcrypt($attributes['password']);
+
+        $user = User::create($attributes);
+
+        auth()->login($user);
+
+        session()->flash('message', 'Your account created');
+
+        return redirect('/');
+
+    }
+
     public function auth(Request $request)
     {
         $attributes = $request->validate([

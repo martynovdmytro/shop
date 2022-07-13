@@ -28,8 +28,8 @@ Route::controller(CatalogController::class)->group(function (){
 });
 
 // Registration
-Route::get('register', [RegistrationController::class, 'index'])->middleware('guest');
-Route::post('create', [RegistrationController::class, 'store'])->middleware('guest');
+Route::get('register', [AuthorisationController::class, 'register'])->middleware('guest');
+Route::post('create', [AuthorisationController::class, 'store'])->middleware('guest');
 
 // Authorisation
 Route::controller(AuthorisationController::class)->group(function(){
