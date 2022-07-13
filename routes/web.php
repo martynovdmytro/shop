@@ -27,30 +27,29 @@ Route::controller(CatalogController::class)->group(function (){
     Route::get('search', 'search');
 });
 
-// Registration
-Route::get('register', [AuthorisationController::class, 'register'])->middleware('guest');
-Route::post('create', [AuthorisationController::class, 'store'])->middleware('guest');
-
 // Authorisation
 Route::controller(AuthorisationController::class)->group(function(){
-    Route::get('login', 'index')->middleware('guest');
+    Route::get('login', 'login')->middleware('guest');
     Route::post('auth', 'auth')->middleware('guest');
+    Route::get('register', 'register')->middleware('guest');
+    Route::post('create', 'store')->middleware('guest');
     Route::get('logout', 'destroy')->middleware('auth');
 });
 
 // Admin side
-Route::get('admin', [AdministratorController::class, 'index']);
-Route::get('admin/catalog', [AdministratorController::class, 'showCategory']);
-Route::get('admin/{category:slug}', [AdministratorController::class, 'showProduct']);
+Route::controller(AdministratorController::class)->group(function(){
+    Route::get('admin', 'index')->middleware('can:admin');
+    Route::get('admin/catalog', 'showCategory')->middleware('can:admin');
+    Route::get('admin/{category:slug}', 'showProduct')->middleware('can:admin');
+    Route::get('admin/product/create', 'create')->middleware('can:admin');
+    Route::get('admin/edit/{product:slug}', 'edit')->middleware('can:admin');
+});
 
-Route::get('admin/product/create', [AdministratorController::class, 'create']);
-Route::get('admin/edit/{product:slug}', [AdministratorController::class, 'edit']);
 
-
-Route::get('product/show', [ProductController::class, 'show']);
-Route::post('product/store', [ProductController::class, 'store']);
-Route::post('/edit/{product:slug}', [ProductController::class, 'update']);
-Route::get('/delete/{product:slug}', [ProductController::class, 'destroy']);
+// Product
+Route::post('product/store', [ProductController::class, 'store'])->middleware('can:admin');
+Route::post('/edit/{product:slug}', [ProductController::class, 'update'])->middleware('can:admin');
+Route::get('/delete/{product:slug}', [ProductController::class, 'destroy'])->middleware('can:admin');
 
 
 

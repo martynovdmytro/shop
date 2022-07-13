@@ -9,19 +9,18 @@ use Illuminate\Support\Facades\Auth;
 class AuthorisationController extends Controller
 {
 
-    public function index()
+    public function login()
     {
-        return view('components.header.forms.login');
+        return view('components.header.auth.login');
     }
 
     public function register()
     {
-        return view('components.header.forms.register');
+        return view('components.header.auth.register');
     }
 
     public function store()
     {
-
         $attributes = request()
             ->validate([
                 'login' => ['required'],
@@ -39,7 +38,6 @@ class AuthorisationController extends Controller
         session()->flash('message', 'Your account created');
 
         return redirect('/');
-
     }
 
     public function auth(Request $request)
@@ -58,14 +56,16 @@ class AuthorisationController extends Controller
         return back()
             ->withErrors('Login fail')
             ->withInput();
-
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
-        auth()->logout();
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
 
         return redirect('/');
-
     }
 }

@@ -1,5 +1,6 @@
 <x-header.admin.admin>
     <div class="list-group">
+        <h4>Products</h4>
         @foreach($products as $product)
             <div class="row bg-white rounded m-1">
                 <h5 class="col-md-3 m-1 text-black">{{ $product->title }}</h5>

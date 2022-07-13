@@ -2,7 +2,7 @@
     <form method="POST" name="register" enctype="multipart/form-data" action="/admin/store">
         @csrf
         <div>
-            <h2>Add a product</h2>
+            <h2>Add a new product</h2>
         </div>
         <div class="row">
             <div class="col-md-6 mb-3">

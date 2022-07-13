@@ -3,5 +3,5 @@
     <button class="btn btn-danger w-100" type="submit">Catalog</button>
 </form>
 <form class="m-1" method="GET" action="/admin/product/create">
-    <button class="btn btn-danger w-100" type="submit">Create a new product</button>
+    <button class="btn btn-danger w-100" type="submit">Add a new product</button>
 </form>

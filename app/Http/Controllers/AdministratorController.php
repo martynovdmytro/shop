@@ -15,7 +15,7 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        return view('components.header.admin.create');
+        return view('components.header.admin.admin-index');
     }
 
     /**

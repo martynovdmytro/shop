@@ -2,7 +2,7 @@
     <form method="POST" name="register" enctype="multipart/form-data" action="/edit/{{ $product->slug }}">
         @csrf
         <div>
-            <h2>Add a product</h2>
+            <h2>Edit a product</h2>
         </div>
         <div class="row">
             <div class="col-md-6 mb-3">

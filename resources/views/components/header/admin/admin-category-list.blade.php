@@ -1,5 +1,6 @@
 <x-header.admin.admin>
     <div class="list-group">
+        <h4>Category</h4>
         @foreach($categories as $category)
             <div class="row bg-white rounded m-1">
                 <a class="col-md-3 nav-link text-black m-2" href="/admin/{{ $category->slug }}"><h5>{{ $category->name }}</h5></a>

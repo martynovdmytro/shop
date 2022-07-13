@@ -6,9 +6,9 @@
     </nav>
     <section>
         @auth()
-            <x-header.welcome />
+            <x-header.welcome-auth />
         @else
-            <x-header.create />
+            <x-header.welcom-guest />
         @endauth
     </section>
 
