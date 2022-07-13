@@ -22,8 +22,6 @@ class ProductFactory extends Factory
             'image' => 'https://loremflickr.com/320/240',
             'price' => $this->faker->numberBetween(10000, 20000),
             'amount' => $this->faker->numberBetween(50, 100),
-            'category_id' => rand(1, 6),
-            'attribute_id' => rand(1, 30),
         ];
     }
 }

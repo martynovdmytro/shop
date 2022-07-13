@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class CatalogController extends Controller
     public function categoryProducts(Category $category)
     {
         return view('products', [
-            'products' => $category->product
+            'products' => $category->products
         ]);
     }
 

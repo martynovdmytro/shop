@@ -5,10 +5,13 @@ namespace Database\Seeders;
 use App\Models\Attribute;
 use App\Models\AttributeDescription;
 use App\Models\Category;
+use App\Models\Description;
+use App\Models\Feature;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\User;
 use Database\Factories\AttributeFactory;
+use Database\Factories\DescriptionFactory;
 use Database\Factories\ProductAttributeFactory;
 use Database\Factories\ProductFactory;
 use Faker\Factory;
@@ -25,11 +28,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Product::factory(30)->create();
-
-        Category::factory(6)->create();
-
-        Attribute::factory(30)->create();
+        Category::factory(6)
+            ->has(Product::factory()
+                ->hasAttached(Feature::factory()
+                    ->has(Description::factory()))
+                ->count(5))
+            ->create();
 
     }
 }

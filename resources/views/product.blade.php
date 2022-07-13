@@ -6,7 +6,7 @@
                     <x-carousel-slide :product="$product" />
                 </div>
                 <div class="col-md-8">
-                    <x-attributes :description="$description" />
+                    <x-features :product="$product" />
                 </div>
             </div>
         </article>

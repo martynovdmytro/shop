@@ -15,16 +15,12 @@ class Product extends Model
 
     public function category()
     {
-
         return $this->belongsTo(Category::class);
-
     }
 
-    public function attributes()
+    public function features()
     {
-
-        return $this->hasMany(Attribute::class);
-
+        return $this->belongsToMany(Feature::class);
     }
 
 

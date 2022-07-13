@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AttributeFactory extends Factory
+class FeatureFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,8 +14,7 @@ class AttributeFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
-            'product_id' => rand(1, 30)
+            'name' => $this->faker->word()
         ];
     }
 }
