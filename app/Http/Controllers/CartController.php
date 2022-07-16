@@ -35,7 +35,7 @@ class CartController extends Controller
      */
     public function create(Request $request, Product $product)
     {
-
+        return view('components.header.delivery-form');
     }
 
     /**

@@ -5,6 +5,7 @@
 
     </nav>
     <section>
+
         @auth()
             <x-header.welcome-auth />
         @else

@@ -1,7 +1,6 @@
 <x-layout>
     <div class="list-group">
         <h4>Products</h4>
-{{--        {{ dd($items) }}--}}
         @if(!empty($items))
         @foreach($items as $item)
             <div class="row bg-info rounded m-1">

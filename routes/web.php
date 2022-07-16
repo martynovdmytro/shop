@@ -54,7 +54,7 @@ Route::get('/delete/{product:slug}', [ProductController::class, 'destroy'])->mid
 
 // Cart
 Route::get('cart', [CartController::class, 'index']);
-Route::post('cart/create', [CartController::class, 'create']);
+Route::get('cart/create', [CartController::class, 'create']);
 Route::post('cart/store/{product:slug}', [CartController::class, 'store']);
 //Route::get('cart/show', [CartController::class, 'show']);
 //Route::get('cart/update', [CartController::class, 'update']);
