@@ -15,9 +15,10 @@
                             <h5><a class="nav-link" href="/product/{{ $product->slug }}">{{ $product->title }}</a></h5>
                             <p>{{ $product->description }}</p>
                             <p>{{ $product->price }}$</p>
-                            <div class="row">
-                                <button class="btn btn-danger col-md-10 mx-auto mt-2">Add to card</button>
-                            </div>
+                            <form class="row pb-2" method="POST" action="/cart/store/{{ $product->slug }}">
+                                @csrf
+                                <button class="btn btn-danger col-md-10 mx-auto">Add to cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach

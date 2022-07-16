@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\AuthorisationController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
@@ -36,7 +37,7 @@ Route::controller(AuthorisationController::class)->group(function(){
     Route::get('logout', 'destroy')->middleware('auth');
 });
 
-// Admin side
+// Admin
 Route::controller(AdministratorController::class)->group(function(){
     Route::get('admin', 'index')->middleware('can:admin');
     Route::get('admin/catalog', 'showCategory')->middleware('can:admin');
@@ -51,6 +52,15 @@ Route::post('product/store', [ProductController::class, 'store'])->middleware('c
 Route::post('/edit/{product:slug}', [ProductController::class, 'update'])->middleware('can:admin');
 Route::get('/delete/{product:slug}', [ProductController::class, 'destroy'])->middleware('can:admin');
 
+// Cart
+Route::get('cart', [CartController::class, 'index']);
+//Route::post('cart/{product:slug}', [CartController::class, 'create']);
+Route::post('cart/store/{product:slug}', [CartController::class, 'store']);
+//Route::get('cart/show', [CartController::class, 'show']);
+//Route::get('cart/edit/', [CartController::class, 'store']);
+//Route::get('cart/update', [CartController::class, 'update']);
+Route::get('cart/delete/all', [CartController::class, 'destroy']);
+Route::get('cart/delete/{product:id}', [CartController::class, 'destroy']);
 
 
 

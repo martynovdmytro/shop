@@ -21,7 +21,7 @@
         </div>
     </section>
     @if(session()->has('message'))
-        <div class="bg-primary col-md-3 offset-9 position-fixed bottom-0 right-0 rounded-2 h-10 text-center">
+        <div class="bg-primary col-md-3 offset-9 position-fixed bottom-0 right-0 rounded-2 h-10 text-center" id="message">
             <h5 class="m-2">{{ session('message') }}</h5>
         </div>
     @endif

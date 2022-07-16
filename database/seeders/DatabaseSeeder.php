@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Description;
 use App\Models\Feature;
 use App\Models\Product;
+use App\Models\User;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
@@ -18,6 +19,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::factory(10)->create();
+
         Category::factory(6)
             ->has(Product::factory()
                 ->hasAttached(Feature::factory()

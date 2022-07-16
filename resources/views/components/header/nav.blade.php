@@ -19,6 +19,7 @@
                     Dropdown button
                 </button>
                 <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/cart">Cart</a></li>
                     @auth()
                     <li><a class="dropdown-item" href="/logout">Logout</a></li>
                         @can('admin')
