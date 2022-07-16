@@ -29,7 +29,7 @@ class CartController extends Controller
     }
 
     /**
-     * Create a new position in the order table.
+     * Create a new order.
      *
      * @return \Illuminate\Http\Response
      */
