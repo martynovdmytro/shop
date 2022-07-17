@@ -31,7 +31,7 @@ class AddressController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a delivery address in storage.
      *
      * @param  \App\Http\Requests\StoreAddressRequest  $request
      * @return \Illuminate\Http\Response

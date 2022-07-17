@@ -31,7 +31,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new order in storage.
      *
      * @param  \App\Http\Requests\StoreOrderRequest  $request
      * @return \Illuminate\Http\Response
@@ -40,9 +40,17 @@ class OrderController extends Controller
     {
         $total = Redis::hget('total', 'price');
 
-        $id = DB::table('orders')->insertGetId(['total' => $total]);
+        $orderId = DB::table('orders')->insertGetId(['total' => $total]);
 
-        return $id;
+        foreach (Redis::hgetall('items') as $item) {
+            $items[] = json_decode($item, true);
+        }
+
+        foreach ($items as $item) {
+            DB::table('order_product')->insert(['order_id' => $orderId, 'product_id' => $item['id']]);
+        }
+
+        return $orderId;
 
     }
 

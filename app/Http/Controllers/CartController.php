@@ -23,6 +23,8 @@ class CartController extends Controller
             $items[] = json_decode($item, true);
         }
 
+        $prices = array();
+
         foreach ($items as $item) {
             $prices[] = $item['price'];
         }
@@ -35,11 +37,10 @@ class CartController extends Controller
             'items' => $items,
             'total' => $total
         ]);
-
     }
 
     /**
-     * Create a new order.
+     * Show the delivery form for creating a new order.
      *
      * @return \Illuminate\Http\Response
      */
@@ -59,40 +60,6 @@ class CartController extends Controller
         Redis::hset('items', $product->id, $product);
 
         return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request)
-    {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
