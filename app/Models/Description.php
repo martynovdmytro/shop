@@ -13,5 +13,4 @@ class Description extends Model
     {
         return $this->belongsTo(Feature::class);
     }
-
 }

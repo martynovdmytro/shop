@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 
@@ -53,6 +52,7 @@ class CartController extends Controller
      * Store products to the cart.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  Product $product
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Product $product)

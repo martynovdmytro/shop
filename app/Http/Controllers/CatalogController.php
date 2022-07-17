@@ -43,6 +43,4 @@ class CatalogController extends Controller
             'products' => $product
         ]);
     }
-
-
 }

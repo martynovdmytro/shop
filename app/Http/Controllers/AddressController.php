@@ -19,9 +19,13 @@ class AddressController extends Controller
     public function store(StoreAddressRequest $request)
     {
         $attributes = $request->validated();
+
         $order = New OrderController();
+
         $orderId = $order->store();
+
         $attributes['order_id'] = $orderId;
+
         $create = Address::create($attributes);
 
         if ($create) {

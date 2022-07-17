@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthorisationController extends Controller
 {
-
     public function login()
     {
         return view('components.header.auth.login');

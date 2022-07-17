@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreOrderRequest;
-use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
@@ -13,7 +11,6 @@ class OrderController extends Controller
     /**
      * Store a new order in storage.
      *
-     * @param  \App\Http\Requests\StoreOrderRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store()
@@ -31,6 +28,5 @@ class OrderController extends Controller
         }
 
         return $orderId;
-
     }
 }
