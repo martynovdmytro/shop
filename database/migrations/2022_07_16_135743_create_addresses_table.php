@@ -23,6 +23,7 @@ class CreateAddressesTable extends Migration
             $table->string('code');
             $table->string('address');
             $table->string('phone');
+            $table->foreignId('order_id');
             $table->timestamps();
         });
     }

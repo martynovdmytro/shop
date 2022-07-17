@@ -1,5 +1,5 @@
 <x-header.delivery>
-    <form method="POST" name="register" enctype="multipart/form-data" action="/admin/store">
+    <form method="POST" name="register" enctype="multipart/form-data" action="/address/store">
         @csrf
         <div>
             <h2>Delivery form</h2>

@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\AuthorisationController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +62,10 @@ Route::post('cart/store/{product:slug}', [CartController::class, 'store']);
 //Route::get('cart/update', [CartController::class, 'update']);
 Route::get('cart/delete/all', [CartController::class, 'destroy']);
 Route::get('cart/delete/{product:id}', [CartController::class, 'destroy']);
+
+Route::get('order/store', [OrderController::class, 'store']);
+
+Route::post('address/store', [AddressController::class, 'store']);
 
 
 

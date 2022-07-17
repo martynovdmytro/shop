@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
 
-        Address::factory(30)->create();
-
         Category::factory(6)
             ->has(Product::factory()
+                ->hasAttached(Order::factory()
+                    ->has(Address::factory()))
                 ->hasAttached(Feature::factory()
                     ->has(Description::factory()))
                 ->count(5))

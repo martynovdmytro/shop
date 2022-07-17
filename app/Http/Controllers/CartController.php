@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -22,8 +23,17 @@ class CartController extends Controller
             $items[] = json_decode($item, true);
         }
 
+        foreach ($items as $item) {
+            $prices[] = $item['price'];
+        }
+
+        $total = array_sum($prices);
+
+        Redis::hset('total', 'price', $total);
+
         return view('shopcart', [
-            'items' => $items
+            'items' => $items,
+            'total' => $total
         ]);
 
     }

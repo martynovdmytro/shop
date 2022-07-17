@@ -16,7 +16,6 @@ class OrderFactory extends Factory
     {
         return [
             'total' => random_int(10000, 30000),
-            'address_id' => Address::factory()
         ];
     }
 }
