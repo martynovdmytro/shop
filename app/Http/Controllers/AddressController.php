@@ -46,7 +46,11 @@ class AddressController extends Controller
 
         $attributes['order_id'] = $orderId;
 
-        Address::create($attributes);
+        $create = Address::create($attributes);
+
+        if ($create) {
+            Redis::del('items');
+        }
 
         return redirect('/cart')->with('message', 'Order created');
     }
