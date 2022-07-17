@@ -58,13 +58,11 @@ Route::get('/delete/{product:slug}', [ProductController::class, 'destroy'])->mid
 Route::get('cart', [CartController::class, 'index']);
 Route::get('cart/create', [CartController::class, 'create']);
 Route::post('cart/store/{product:slug}', [CartController::class, 'store']);
-//Route::get('cart/show', [CartController::class, 'show']);
-//Route::get('cart/update', [CartController::class, 'update']);
 Route::get('cart/delete/all', [CartController::class, 'destroy']);
 Route::get('cart/delete/{product:id}', [CartController::class, 'destroy']);
 
+// Order
 Route::get('order/store', [OrderController::class, 'store']);
-
 Route::post('address/store', [AddressController::class, 'store']);
 
 

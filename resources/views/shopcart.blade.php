@@ -25,8 +25,4 @@
         <button class="btn btn-danger w-100 m-2" type="submit">Create order</button>
     </form>
     <h3>Total price: {{ $total }}</h3>
-
-    <form class="col-md-2" method="GET" action="/order/store">
-        <button class="btn btn-danger w-100 m-2" type="submit">Create order</button>
-    </form>
 </x-layout>

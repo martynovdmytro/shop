@@ -33,7 +33,7 @@
         <p>{{ $product->price }}$</p>
     </div>
 
-    <form class="row pb-2" method="POST" action="/cart/{{ $product->slug }}">
+    <form class="row pb-2" method="POST" action="/cart/store/{{ $product->slug }}">
         @csrf
         <button class="btn btn-danger col-md-10 mx-auto">Add to cart</button>
     </form>
